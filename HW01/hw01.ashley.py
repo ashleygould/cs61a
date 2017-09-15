@@ -108,6 +108,60 @@ def f():
 
 
 
+# Q5: Hailstone
+
+# Pick a positive integer n as the start.
+# If n is even, divide it by 2.
+# If n is odd, multiply it by 3 and add 1.
+# Continue this process until n is 1.
+# 
+# This sequence of values of n is often called a Hailstone sequence, Write a
+# function that takes a single argument with formal parameter name n, prints out
+# the hailstone sequence starting at n, and returns the number of steps in the
+# sequence
+
+def hailstone(n):
+    """Print the hailstone sequence starting at n and return its
+    length.
+
+    >>> a = hailstone(10)
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    >>> a
+    7
+    """
+    if not isinstance(n, int) or n <= 1:
+        raise ValueError('n must be integer greater than 1')
+
+    # Using recursion:
+    #def hail(n, counter=1):
+    #    print(n)
+    #    if n > 1:
+    #        if n % 2 == 0:
+    #            n = n/2
+    #        else:
+    #            n = n * 3 + 1
+    #        return hail(n, counter + 1)
+    #    return counter
+    #return hail(n)
+ 
+    # Using while loop:
+    counter = 1
+    print(n)
+    while n > 1:
+        if n % 2 == 0:
+            n = n/2
+        else:
+            n = n * 3 + 1
+        counter += 1
+        print(n)
+    return counter
+
 
 # Doctest
 #   python H1.ashley.py
